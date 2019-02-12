@@ -1,0 +1,37 @@
+{
+  "name": "react-transform-components",
+  "version": "0.0.2",
+  "description": "components about transform",
+  "main": "./lib/index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel src --out-dir lib --copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BetaSun/react-transform-components.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "BetaSun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BetaSun/react-transform-components/issues"
+  },
+  "homepage": "https://github.com/BetaSun/react-transform-components#readme",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react-custom-scrollbars": "^4.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
