@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
-import { classNames, isArray } from '../utils';
-import styles from './index.less';
+import { isArray } from '../utils';
 
 /**
  * 可以旋转的组件
@@ -31,15 +30,19 @@ export default class Rotate extends PureComponent {
 
     return (
       <div
-        className={classNames(styles.container, className)}
+        className={className}
         style={{
-          ...style,
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          transformStyle: 'preserve-3d',
           transform: `rotate${axis.toUpperCase()}(${isFront ? 0 : 180}deg)`,
           transition: `transform ${duration}s`,
+          ...style,
         }}
       >
-        <div className={styles.front}>{isFront ? children[frontIndex] : children[backIndex]}</div>
-        <div className={styles.back} style={{ transform: `rotate${axis.toUpperCase()}(180deg)` }}>{isFront ? children[backIndex] : children[frontIndex]}</div>
+        <div style={{ position: 'absolute', top: 0, left: 0, zIndex: 1, width: '100%', height: '100%', backfaceVisibility: 'hidden' }}>{isFront ? children[frontIndex] : children[backIndex]}</div>
+        <div style={{ width: '100%', height: '100%', backfaceVisibility: 'hidden', transform: `rotate${axis.toUpperCase()}(180deg)` }}>{isFront ? children[backIndex] : children[frontIndex]}</div>
       </div>
     );
   }

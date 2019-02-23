@@ -4,7 +4,7 @@
  * @return {String} 合并以后的类名
  */
 export function classNames(...args) {
-  return args.map(arg => arg || '').join(' ');
+  return args.filter(arg => arg).join(' ');
 }
 
 /**
